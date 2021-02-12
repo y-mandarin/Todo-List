@@ -10,6 +10,7 @@ body {
   padding: 0;
   background-color: var(--color-bg);
   color: var(--color-font);
+  font-family: "Sunflower", sans-serif;
 }
 
 aside {
@@ -19,6 +20,17 @@ aside {
   align-items: center;
   width: 25%;
   min-width: 300px;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+button {
+  border: none;
+  background: none;
+  color: var(--color-font);
 }
 
 .clock {
@@ -35,9 +47,21 @@ aside {
   font-size: 4em;
 }
 
-.list {
-  list-style-type: none;
-  padding: 0;
+.user_form {
+  display: none;
+}
+
+.user_name {
+  display: none;
+  font-size: 2em;
+}
+
+.showing {
+  display: block;
+}
+
+.todo span {
+  margin-right: 40px;
 }
 
 .list li {
