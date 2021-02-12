@@ -1,0 +1,60 @@
+:root {
+  --color-bg: #f8efe2;
+  --color-font: #aa9e8b;
+}
+
+body {
+  display: flex;
+  justify-content: space-between;
+  margin: 0;
+  padding: 0;
+  background-color: var(--color-bg);
+  color: var(--color-font);
+}
+
+aside {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  width: 25%;
+  min-width: 300px;
+}
+
+.clock {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.date {
+  font-size: 1.5em;
+}
+
+.time {
+  font-size: 4em;
+}
+
+.list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.list li {
+  margin-top: 1em;
+  font-size: 1.5em;
+  text-align: center;
+}
+
+main {
+  height: 100vh;
+  display: block;
+  overflow: hidden;
+  text-align: right;
+}
+
+.bgImg {
+  height: 970px;
+  /* min-height: 700px; */
+  /* object-fit: cover; */
+}
