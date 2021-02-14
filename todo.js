@@ -9,7 +9,6 @@ let id = 0;
 
 function handleButton(event){
     const li = event.target.parentNode;
-    console.log(li);
 
     ul.removeChild(li);
 

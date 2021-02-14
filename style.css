@@ -1,6 +1,32 @@
 :root {
+  /* --color-- */
   --color-bg: #f8efe2;
   --color-font: #aa9e8b;
+  --color-list: #867861;
+
+  /* --size-- */
+  --date-size: 1.5em;
+  --clock-size: 4em;
+  --name-size: 3em;
+  --todo-size: 2em;
+  --todo-button-size: 3em;
+  --button-size: 1em;
+  --button-margin-size: 1em;
+  --box-button-size: 2em;
+  --list-box-margin: 3em;
+  --list-margin: 20px;
+}
+
+::placeholder {
+  color: var(--color-list);
+}
+
+::-webkit-scrollbar {
+  background: var(--color-bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-list);
 }
 
 body {
@@ -40,11 +66,11 @@ button {
 }
 
 .date {
-  font-size: 1.5em;
+  font-size: var(--date-size);
 }
 
 .time {
-  font-size: 4em;
+  font-size: var(--clock-size);
 }
 
 .user_form {
@@ -53,7 +79,7 @@ button {
 
 .user_name {
   display: none;
-  font-size: 2em;
+  font-size: var(--name-size);
 }
 
 .showing {
@@ -64,21 +90,96 @@ button {
   margin-right: 40px;
 }
 
-.list li {
-  margin-top: 1em;
-  font-size: 1.5em;
-  text-align: center;
+aside button {
+  font-size: var(--todo-button-size);
 }
 
 main {
+  width: 75%;
   height: 100vh;
-  display: block;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  /* text-align: right;/ */
+  background-image: url("img/1.jpg");
+}
+
+.box {
+  width: 900px;
+  height: 800px;
+  background-color: var(--color-bg);
+  border-radius: 10%;
+  opacity: 0.85;
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+.show_box {
+  display: flex;
+}
+.todo_form_box {
+  height: 30%;
+  display: flex;
+  align-items: center;
+}
+
+.todo_form_box button {
+  position: absolute;
+  top: 40px;
+  right: 50px;
+  font-size: var(--box-button-size);
+}
+
+.todo_form input {
+  border: none;
+  background-color: none;
+  font-size: var(--todo-size);
+  text-align: center;
+  color: var(--color-list);
+  background: none;
+}
+
+.todo_box {
+  overflow: scroll;
+  margin-bottom: var(--list-box-margin);
+}
+
+.todo_list {
+  font-size: var(--todo-size);
+}
+
+.todo_list li {
+  margin-top: var(--list-margin);
+  color: var(--color-list);
+  display: flex;
+  justify-content: space-between;
+}
+
+.todo_list span {
+  width: 550px;
+}
+
+.todo_list li button {
+  cursor: pointer;
+  font-size: var(--button-size);
+  margin-left: var(--button-margin-size);
+  margin-right: var(--button-margin-size);
+}
+/* 
+.bg {
   overflow: hidden;
-  text-align: right;
+  text-align: center;
+  z-index: -1;
+  overflow: hidden;
 }
 
 .bgImg {
-  height: 970px;
-  /* min-height: 700px; */
-  /* object-fit: cover; */
-}
+  height: 100vh;
+  max-width: 1200px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: -1;
+} */
