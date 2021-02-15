@@ -14,7 +14,7 @@ function handleCheck(event){
 }
 
 function handleButton(event){
-    const li = event.target.parentNode;
+    const li = event.target.parentNode.parentNode;
 
     ul.removeChild(li);
 
@@ -39,8 +39,8 @@ function showList(text){
     check.type='checkbox';
     check.addEventListener('click',handleCheck);
     span.innerText=text;
-    btn.innerHTML=`<i class="fas fa-times"></i>`;
     btn.addEventListener('click',handleButton);
+    btn.innerHTML=`<i class="fas fa-times"></i>`;
 
     li.id = id;
     li.append(check);
