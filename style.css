@@ -9,6 +9,8 @@
   --date-size: 1.5em;
   --clock-size: 4em;
   --name-size: 3em;
+  --ask-size: 2em;
+  --input-padding: 10px;
   --todo-size: 2em;
   --todo-button-size: 3em;
   --check-margkn: 3em;
@@ -83,19 +85,35 @@ button {
 
 .user {
   margin-bottom: auto;
+  text-align: center;
 }
 
 .user_form {
   display: none;
 }
 
+.user_form input {
+  border: none;
+  background-color: none;
+  font-size: var(--ask-size);
+  text-align: center;
+  color: var(--color-font);
+  background: none;
+  border-bottom: solid 1px var(--color-font);
+  padding-bottom: var(--input-padding);
+  width: 80%;
+}
+
 .user_name {
+  width: 80%;
   display: none;
   font-size: var(--name-size);
+  margin: auto;
 }
 
 .showing {
   display: block;
+  overflow-wrap: anywhere;
 }
 
 .todo span {
