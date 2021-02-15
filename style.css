@@ -3,6 +3,7 @@
   --color-bg: #f8efe2;
   --color-font: #aa9e8b;
   --color-list: #867861;
+  --color-white: white;
 
   /* --size-- */
   --date-size: 1.5em;
@@ -10,6 +11,7 @@
   --name-size: 3em;
   --todo-size: 2em;
   --todo-button-size: 3em;
+  --check-margkn: 3em;
   --button-size: 1em;
   --button-margin-size: 1em;
   --box-button-size: 2em;
@@ -27,6 +29,10 @@
 
 ::-webkit-scrollbar-thumb {
   background: var(--color-list);
+}
+
+button {
+  cursor: pointer;
 }
 
 body {
@@ -63,6 +69,8 @@ button {
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-top: 40%;
+  margin-bottom: 40%;
 }
 
 .date {
@@ -71,6 +79,10 @@ button {
 
 .time {
   font-size: var(--clock-size);
+}
+
+.user {
+  margin-bottom: auto;
 }
 
 .user_form {
@@ -94,22 +106,30 @@ aside button {
   font-size: var(--todo-button-size);
 }
 
+.bottom {
+  display: flex;
+  justify-content: space-between;
+  width: 80%;
+  align-items: center;
+  margin-bottom: 10%;
+}
+
 main {
   width: 75%;
   height: 100vh;
   display: flex;
   justify-content: space-around;
   align-items: center;
-  /* text-align: right;/ */
-  background-image: url("img/1.jpg");
+  background-position: center;
+  background-size: cover;
 }
 
 .box {
   width: 900px;
   height: 800px;
-  background-color: var(--color-bg);
+  background-color: var(--color-white);
   border-radius: 10%;
-  opacity: 0.85;
+  opacity: 0.95;
   display: none;
   flex-direction: column;
   align-items: center;
@@ -128,7 +148,7 @@ main {
 .todo_form_box button {
   position: absolute;
   top: 40px;
-  right: 50px;
+  right: 40px;
   font-size: var(--box-button-size);
 }
 
@@ -143,6 +163,7 @@ main {
 
 .todo_box {
   overflow: scroll;
+  overflow-x: hidden;
   margin-bottom: var(--list-box-margin);
 }
 
@@ -155,6 +176,11 @@ main {
   color: var(--color-list);
   display: flex;
   justify-content: space-between;
+  align-items: center;
+}
+
+.todo_list input {
+  margin-right: var(--check-margkn);
 }
 
 .todo_list span {
@@ -162,24 +188,15 @@ main {
 }
 
 .todo_list li button {
-  cursor: pointer;
   font-size: var(--button-size);
   margin-left: var(--button-margin-size);
   margin-right: var(--button-margin-size);
 }
-/* 
-.bg {
-  overflow: hidden;
-  text-align: center;
-  z-index: -1;
-  overflow: hidden;
+
+.checked {
+  text-decoration: line-through;
 }
 
-.bgImg {
-  height: 100vh;
-  max-width: 1200px;
-  position: absolute;
-  top: 0;
-  right: 0;
-  z-index: -1;
-} */
+.todo_list input[type="checkbox"] {
+  cursor: pointer;
+}

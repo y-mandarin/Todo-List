@@ -7,6 +7,12 @@ const TODO = 'todo';
 let list = [];
 let id = 0;
 
+function handleCheck(event){
+    const li = event.target.parentNode;
+
+    li.childNodes[1].classList.toggle('checked');
+}
+
 function handleButton(event){
     const li = event.target.parentNode;
 
@@ -26,14 +32,18 @@ function saveList(){
 
 function showList(text){
     const li = document.createElement("li");
+    const check = document.createElement("input");
     const span = document.createElement("span");
     const btn = document.createElement("button");
 
+    check.type='checkbox';
+    check.addEventListener('click',handleCheck);
     span.innerText=text;
-    btn.innerText="x";
+    btn.innerHTML=`<i class="fas fa-times"></i>`;
     btn.addEventListener('click',handleButton);
 
     li.id = id;
+    li.append(check);
     li.append(span);
     li.append(btn);
     ul.appendChild(li);
@@ -43,7 +53,6 @@ function showList(text){
         id: id++,
     }
     list.push(WTD);
-    console.log(WTD);
 
     saveList();
 }
